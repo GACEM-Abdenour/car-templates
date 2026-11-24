@@ -1,0 +1,12 @@
+C:\Users\abdeg\Documents\codeProjects\car-templates\02_ArticlesScientifiques\ClientForm\bin\Debug\ClientForm.exe.config
+C:\Users\abdeg\Documents\codeProjects\car-templates\02_ArticlesScientifiques\ClientForm\bin\Debug\ClientForm.exe
+C:\Users\abdeg\Documents\codeProjects\car-templates\02_ArticlesScientifiques\ClientForm\bin\Debug\ClientForm.pdb
+C:\Users\abdeg\Documents\codeProjects\car-templates\02_ArticlesScientifiques\ClientForm\bin\Debug\Interfaces.dll
+C:\Users\abdeg\Documents\codeProjects\car-templates\02_ArticlesScientifiques\ClientForm\bin\Debug\Interfaces.pdb
+C:\Users\abdeg\Documents\codeProjects\car-templates\02_ArticlesScientifiques\ClientForm\obj\Debug\ClientForm.csproj.AssemblyReference.cache
+C:\Users\abdeg\Documents\codeProjects\car-templates\02_ArticlesScientifiques\ClientForm\obj\Debug\ClientForm.Form1.resources
+C:\Users\abdeg\Documents\codeProjects\car-templates\02_ArticlesScientifiques\ClientForm\obj\Debug\ClientForm.csproj.GenerateResource.cache
+C:\Users\abdeg\Documents\codeProjects\car-templates\02_ArticlesScientifiques\ClientForm\obj\Debug\ClientForm.csproj.CoreCompileInputs.cache
+C:\Users\abdeg\Documents\codeProjects\car-templates\02_ArticlesScientifiques\ClientForm\obj\Debug\ClientForm.csproj.Up2Date
+C:\Users\abdeg\Documents\codeProjects\car-templates\02_ArticlesScientifiques\ClientForm\obj\Debug\ClientForm.exe
+C:\Users\abdeg\Documents\codeProjects\car-templates\02_ArticlesScientifiques\ClientForm\obj\Debug\ClientForm.pdb

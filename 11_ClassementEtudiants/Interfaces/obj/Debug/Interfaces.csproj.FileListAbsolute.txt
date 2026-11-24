@@ -1,0 +1,6 @@
+C:\Users\abdeg\Documents\codeProjects\car-templates\11_ClassementEtudiants\Interfaces\bin\Debug\Interfaces.dll
+C:\Users\abdeg\Documents\codeProjects\car-templates\11_ClassementEtudiants\Interfaces\bin\Debug\Interfaces.pdb
+C:\Users\abdeg\Documents\codeProjects\car-templates\11_ClassementEtudiants\Interfaces\obj\Debug\Interfaces.csproj.AssemblyReference.cache
+C:\Users\abdeg\Documents\codeProjects\car-templates\11_ClassementEtudiants\Interfaces\obj\Debug\Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\abdeg\Documents\codeProjects\car-templates\11_ClassementEtudiants\Interfaces\obj\Debug\Interfaces.dll
+C:\Users\abdeg\Documents\codeProjects\car-templates\11_ClassementEtudiants\Interfaces\obj\Debug\Interfaces.pdb

@@ -1,0 +1,28 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{8B502131-376A-42BE-827E-5FD55EC94B3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{A934C061-4A00-4652-83E1-83FDB6C92003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientForm", "ClientForm\ClientForm.csproj", "{6B06D041-BBE2-431A-90CB-36E8AF2DFCE1}"
+EndProject
+Global
+GlobalSection(SolutionConfigurationPlatforms) = preSolution
+Debug|Any CPU = Debug|Any CPU
+Release|Any CPU = Release|Any CPU
+EndGlobalSection
+GlobalSection(ProjectConfigurationPlatforms) = postSolution
+{8B502131-376A-42BE-827E-5FD55EC94B3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+{8B502131-376A-42BE-827E-5FD55EC94B3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+{8B502131-376A-42BE-827E-5FD55EC94B3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+{8B502131-376A-42BE-827E-5FD55EC94B3A}.Release|Any CPU.Build.0 = Release|Any CPU
+{A934C061-4A00-4652-83E1-83FDB6C92003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+{A934C061-4A00-4652-83E1-83FDB6C92003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+{A934C061-4A00-4652-83E1-83FDB6C92003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+{A934C061-4A00-4652-83E1-83FDB6C92003}.Release|Any CPU.Build.0 = Release|Any CPU
+{6B06D041-BBE2-431A-90CB-36E8AF2DFCE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+{6B06D041-BBE2-431A-90CB-36E8AF2DFCE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+{6B06D041-BBE2-431A-90CB-36E8AF2DFCE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+{6B06D041-BBE2-431A-90CB-36E8AF2DFCE1}.Release|Any CPU.Build.0 = Release|Any CPU
+EndGlobalSection
+EndGlobal

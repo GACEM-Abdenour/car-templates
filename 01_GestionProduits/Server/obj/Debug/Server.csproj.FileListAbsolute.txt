@@ -1,0 +1,11 @@
+C:\Users\abdeg\Documents\codeProjects\car-templates\01_GestionProduits\Server\bin\Debug\Server.exe.config
+C:\Users\abdeg\Documents\codeProjects\car-templates\01_GestionProduits\Server\bin\Debug\Server.exe
+C:\Users\abdeg\Documents\codeProjects\car-templates\01_GestionProduits\Server\bin\Debug\Server.pdb
+C:\Users\abdeg\Documents\codeProjects\car-templates\01_GestionProduits\Server\bin\Debug\Interfaces.dll
+C:\Users\abdeg\Documents\codeProjects\car-templates\01_GestionProduits\Server\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\abdeg\Documents\codeProjects\car-templates\01_GestionProduits\Server\bin\Debug\Interfaces.pdb
+C:\Users\abdeg\Documents\codeProjects\car-templates\01_GestionProduits\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+C:\Users\abdeg\Documents\codeProjects\car-templates\01_GestionProduits\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\abdeg\Documents\codeProjects\car-templates\01_GestionProduits\Server\obj\Debug\Server.csproj.Up2Date
+C:\Users\abdeg\Documents\codeProjects\car-templates\01_GestionProduits\Server\obj\Debug\Server.exe
+C:\Users\abdeg\Documents\codeProjects\car-templates\01_GestionProduits\Server\obj\Debug\Server.pdb

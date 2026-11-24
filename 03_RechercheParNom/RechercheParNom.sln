@@ -1,0 +1,28 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{64468CF5-8CF1-4F26-8E64-7DC76600AD09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{3491F905-BD19-4E99-8E93-DB61DC84E0DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientForm", "ClientForm\ClientForm.csproj", "{5CAD4D78-084B-4035-A272-19874377C4F6}"
+EndProject
+Global
+GlobalSection(SolutionConfigurationPlatforms) = preSolution
+Debug|Any CPU = Debug|Any CPU
+Release|Any CPU = Release|Any CPU
+EndGlobalSection
+GlobalSection(ProjectConfigurationPlatforms) = postSolution
+{64468CF5-8CF1-4F26-8E64-7DC76600AD09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+{64468CF5-8CF1-4F26-8E64-7DC76600AD09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+{64468CF5-8CF1-4F26-8E64-7DC76600AD09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+{64468CF5-8CF1-4F26-8E64-7DC76600AD09}.Release|Any CPU.Build.0 = Release|Any CPU
+{3491F905-BD19-4E99-8E93-DB61DC84E0DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+{3491F905-BD19-4E99-8E93-DB61DC84E0DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+{3491F905-BD19-4E99-8E93-DB61DC84E0DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+{3491F905-BD19-4E99-8E93-DB61DC84E0DC}.Release|Any CPU.Build.0 = Release|Any CPU
+{5CAD4D78-084B-4035-A272-19874377C4F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+{5CAD4D78-084B-4035-A272-19874377C4F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+{5CAD4D78-084B-4035-A272-19874377C4F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+{5CAD4D78-084B-4035-A272-19874377C4F6}.Release|Any CPU.Build.0 = Release|Any CPU
+EndGlobalSection
+EndGlobal

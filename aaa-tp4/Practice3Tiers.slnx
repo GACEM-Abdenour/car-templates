@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="ClientForm/ClientForm.csproj" />
+  <Project Path="Interfaces/Interfaces.csproj" />
+  <Project Path="Server/Server.csproj" />
+</Solution>
