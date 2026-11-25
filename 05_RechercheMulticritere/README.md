@@ -38,3 +38,7 @@ Replace table/column names, parameter types and relevant controls; retain the th
 Test only group, name+group, all filters, no filters and an OR keyword.
 
 The matricule button searches by key; the ET button uses optional filters, and the OU button searches the keyword in either name. Reset clears all filters and displays every student.
+
+## Exam reuse
+
+Use `RechercherEtudiants` in `Server/RemoteOperation.cs` for optional AND filters; bind only supplied criteria and allow an unfiltered result.

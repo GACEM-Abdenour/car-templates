@@ -17,3 +17,7 @@ Build `List<string>` of fixed SET fragments, `string.Join` them, bind only selec
 
 ## Verification
 Change salary 50000 to 65000 and verify other fields remain unchanged. Change department and telephone together; clear telephone; test no selection, invalid unselected salary and unknown matricule. Check affected row count and CRUD.
+
+## Exam reuse
+
+For another partial edit, adapt the fixed SET fragments and parameter types while keeping the primary key in the WHERE clause.

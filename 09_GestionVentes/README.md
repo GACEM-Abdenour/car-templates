@@ -38,3 +38,7 @@ Replace table/column names, parameter types and relevant controls; retain the th
 Quantity 3 × 125.50 produces 376.50; unknown product produces 0.
 
 Use the sale ID for search and deletion; addition and modification also require product, positive quantity and nonnegative price. Decimal input uses the Windows decimal separator. `GetVentes` and `RechercherVente` calculate `montant` in SQL.
+
+## Exam reuse
+
+Use `CalculerChiffreAffaires` in `Server/RemoteOperation.cs` for revenue; keep money as decimal and handle an empty SUM before adapting the amount expression.

@@ -38,3 +38,7 @@ Replace table/column names, parameter types and relevant controls; retain the th
 30 hours is excluded by >30; unknown teacher gives zero.
 
 CRUD and search use the ID, title, teacher and volume fields. The threshold and teacher count buttons use the corresponding fields; the scalar result appears in `lblResultat`. The controls and event associations are in `ClientForm/Form1.Designer.cs`.
+
+## Exam reuse
+
+Use `CompterCours` in `Server/RemoteOperation.cs` when one count is needed; read the scalar result and adapt the WHERE condition to the requested population.

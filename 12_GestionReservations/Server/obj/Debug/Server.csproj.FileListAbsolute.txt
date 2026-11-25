@@ -9,3 +9,4 @@ C:\Users\abdeg\Documents\codeProjects\car-templates\12_GestionReservations\Serve
 C:\Users\abdeg\Documents\codeProjects\car-templates\12_GestionReservations\Server\obj\Debug\Server.csproj.Up2Date
 C:\Users\abdeg\Documents\codeProjects\car-templates\12_GestionReservations\Server\obj\Debug\Server.exe
 C:\Users\abdeg\Documents\codeProjects\car-templates\12_GestionReservations\Server\obj\Debug\Server.pdb
+C:\Users\abdeg\Documents\codeProjects\car-templates\12_GestionReservations\Server\obj\Debug\Server.exe.config

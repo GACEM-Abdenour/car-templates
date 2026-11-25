@@ -10,3 +10,4 @@ C:\Users\abdeg\Documents\codeProjects\car-templates\01_GestionProduits\ClientFor
 C:\Users\abdeg\Documents\codeProjects\car-templates\01_GestionProduits\ClientForm\obj\Debug\ClientForm.csproj.Up2Date
 C:\Users\abdeg\Documents\codeProjects\car-templates\01_GestionProduits\ClientForm\obj\Debug\ClientForm.exe
 C:\Users\abdeg\Documents\codeProjects\car-templates\01_GestionProduits\ClientForm\obj\Debug\ClientForm.pdb
+C:\Users\abdeg\Documents\codeProjects\car-templates\01_GestionProduits\ClientForm\obj\Debug\ClientForm.exe.config

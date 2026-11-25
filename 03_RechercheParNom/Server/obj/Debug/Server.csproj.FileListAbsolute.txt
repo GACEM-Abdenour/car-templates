@@ -9,3 +9,4 @@ C:\Users\abdeg\Documents\codeProjects\car-templates\03_RechercheParNom\Server\ob
 C:\Users\abdeg\Documents\codeProjects\car-templates\03_RechercheParNom\Server\obj\Debug\Server.csproj.Up2Date
 C:\Users\abdeg\Documents\codeProjects\car-templates\03_RechercheParNom\Server\obj\Debug\Server.exe
 C:\Users\abdeg\Documents\codeProjects\car-templates\03_RechercheParNom\Server\obj\Debug\Server.pdb
+C:\Users\abdeg\Documents\codeProjects\car-templates\03_RechercheParNom\Server\obj\Debug\Server.exe.config

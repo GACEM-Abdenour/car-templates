@@ -38,3 +38,7 @@ Replace table/column names, parameter types and relevant controls; retain the th
 Ben prefix, ali contains and ari suffix each produce their expected rows.
 
 CRUD uses matricule, nom and prénom. `Echappe` protects literal backslash, `%` and `_` using Oracle `ESCAPE`; the methods add only the intended prefix/suffix wildcards. Verify literal wildcard searches using isolated sample names containing these characters.
+
+## Exam reuse
+
+Use `RechercherCommencePar` in `Server/RemoteOperation.cs` for prefix searches; escape literal wildcard characters before adding the requested LIKE pattern.

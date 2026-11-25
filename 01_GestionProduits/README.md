@@ -36,3 +36,7 @@ Replace table/column names, parameter types and relevant controls; retain the th
 
 ## Verification
 Add code 1234567890, quantity 20, price 125.50; find it, modify it, then delete it.
+
+## Exam reuse
+
+Use `AjouterProduit` in `Server/RemoteOperation.cs` for typed product CRUD; reject negative values and adapt the barcode and price types to the new table.

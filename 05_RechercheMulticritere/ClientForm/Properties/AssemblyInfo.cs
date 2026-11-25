@@ -1,1 +1,2 @@
-using System.Reflection; [assembly: AssemblyTitle("05_RechercheMulticritere")]
+using System.Reflection;
+[assembly : AssemblyTitle("05_RechercheMulticritere")]

@@ -22,3 +22,7 @@ Add declarations in `Interfaces/IRemoteOperation.cs`, SQL in `Server/RemoteOpera
 
 ## Verification
 For 18, 16, 16, 12, 9 expect RANK 1, 2, 2, 4, 5 and DENSE_RANK 1, 2, 2, 3, 4. Request three rows and test zero and negative N. Verify CRUD and switching from rank to ordinary grid columns.
+
+## Exam reuse
+
+For another ranking exercise, choose `RANK` for ties or a deterministic top-N query according to the énoncé; changing the ordering changes the result.

@@ -36,3 +36,7 @@ Replace table/column names, parameter types and relevant controls; retain the th
 
 ## Verification
 10 is admitted, 9.99 is not; -1 and 21 are rejected.
+
+## Exam reuse
+
+Use `RechercherNotesEntre` in `Server/RemoteOperation.cs` for bounded grade searches; validate both endpoints and adapt the allowed range to the exercise.

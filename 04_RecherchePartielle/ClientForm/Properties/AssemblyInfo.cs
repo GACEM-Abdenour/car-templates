@@ -1,1 +1,2 @@
-using System.Reflection; [assembly: AssemblyTitle("04_RecherchePartielle")]
+using System.Reflection;
+[assembly : AssemblyTitle("04_RecherchePartielle")]

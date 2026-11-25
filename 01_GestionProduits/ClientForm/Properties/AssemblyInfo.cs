@@ -1,1 +1,2 @@
-using System.Reflection; [assembly: AssemblyTitle("01_GestionProduits")]
+using System.Reflection;
+[assembly : AssemblyTitle("01_GestionProduits")]

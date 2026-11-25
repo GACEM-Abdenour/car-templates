@@ -1,13 +1,83 @@
-namespace ClientForm { partial class Form1 {
- private System.ComponentModel.IContainer components=null; protected override void Dispose(bool disposing){if(disposing&&components!=null)components.Dispose();base.Dispose(disposing);}
- private System.Windows.Forms.TextBox txtIdProduit,txtDesignation,txtCategorie,txtQuantite; private System.Windows.Forms.Button btnAfficher,btnAjouter,btnModifier,btnRechercher,btnSupprimer,btnAfficherEpuises,btnSupprimerTousEpuises,btnSupprimerEpuisesCategorie; private System.Windows.Forms.Label lblResultat; private System.Windows.Forms.DataGridView dataGridView1;
- private void InitializeComponent(){
-  this.txtIdProduit=new System.Windows.Forms.TextBox();this.txtDesignation=new System.Windows.Forms.TextBox();this.txtCategorie=new System.Windows.Forms.TextBox();this.txtQuantite=new System.Windows.Forms.TextBox();this.btnAfficher=new System.Windows.Forms.Button();this.btnAjouter=new System.Windows.Forms.Button();this.btnModifier=new System.Windows.Forms.Button();this.btnRechercher=new System.Windows.Forms.Button();this.btnSupprimer=new System.Windows.Forms.Button();this.btnAfficherEpuises=new System.Windows.Forms.Button();this.btnSupprimerTousEpuises=new System.Windows.Forms.Button();this.btnSupprimerEpuisesCategorie=new System.Windows.Forms.Button();this.lblResultat=new System.Windows.Forms.Label();this.dataGridView1=new System.Windows.Forms.DataGridView();((System.ComponentModel.ISupportInitialize)this.dataGridView1).BeginInit();this.SuspendLayout();
-  this.txtIdProduit.Location=new System.Drawing.Point(125,15);this.txtDesignation.Location=new System.Drawing.Point(125,48);this.txtCategorie.Location=new System.Drawing.Point(125,81);this.txtQuantite.Location=new System.Drawing.Point(125,114);this.Controls.Add(new System.Windows.Forms.Label{Text="ID produit",Location=new System.Drawing.Point(15,18)});this.Controls.Add(new System.Windows.Forms.Label{Text="Désignation",Location=new System.Drawing.Point(15,51)});this.Controls.Add(new System.Windows.Forms.Label{Text="Catégorie",Location=new System.Drawing.Point(15,84)});this.Controls.Add(new System.Windows.Forms.Label{Text="Quantité",Location=new System.Drawing.Point(15,117)});
-  this.btnAfficher.Text="Afficher";this.btnAfficher.Location=new System.Drawing.Point(15,155);this.btnAfficher.Click+=this.btnAfficher_Click;this.btnRechercher.Text="Rechercher";this.btnRechercher.Location=new System.Drawing.Point(145,155);this.btnRechercher.Click+=this.btnRechercher_Click;this.btnAjouter.Text="Ajouter";this.btnAjouter.Location=new System.Drawing.Point(275,155);this.btnAjouter.Click+=this.btnAjouter_Click;this.btnModifier.Text="Modifier";this.btnModifier.Location=new System.Drawing.Point(405,155);this.btnModifier.Click+=this.btnModifier_Click;this.btnSupprimer.Text="Supprimer ID";this.btnSupprimer.Location=new System.Drawing.Point(535,155);this.btnSupprimer.Click+=this.btnSupprimer_Click;
-  this.btnAfficherEpuises.Text="Afficher épuisés";this.btnAfficherEpuises.Location=new System.Drawing.Point(15,195);this.btnAfficherEpuises.Click+=this.btnAfficherEpuises_Click;this.btnSupprimerTousEpuises.Text="Supprimer épuisés";this.btnSupprimerTousEpuises.Location=new System.Drawing.Point(165,195);this.btnSupprimerTousEpuises.Click+=this.btnSupprimerTousEpuises_Click;this.btnSupprimerEpuisesCategorie.Text="Épuisés catégorie";this.btnSupprimerEpuisesCategorie.Location=new System.Drawing.Point(325,195);this.btnSupprimerEpuisesCategorie.Click+=this.btnSupprimerEpuisesCategorie_Click;
-  this.btnAfficher.Size=this.btnRechercher.Size=this.btnAjouter.Size=this.btnModifier.Size=this.btnSupprimer.Size=new System.Drawing.Size(120,30);this.btnAfficherEpuises.Size=this.btnSupprimerTousEpuises.Size=this.btnSupprimerEpuisesCategorie.Size=new System.Drawing.Size(145,30);this.lblResultat.Location=new System.Drawing.Point(15,230);this.lblResultat.Size=new System.Drawing.Size(730,25);
-  this.dataGridView1.Location=new System.Drawing.Point(15,260);this.dataGridView1.Size=new System.Drawing.Size(770,280);this.dataGridView1.Anchor=System.Windows.Forms.AnchorStyles.Top|System.Windows.Forms.AnchorStyles.Bottom|System.Windows.Forms.AnchorStyles.Left|System.Windows.Forms.AnchorStyles.Right;this.dataGridView1.ReadOnly=true;this.dataGridView1.AutoSizeColumnsMode=System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-  this.Controls.AddRange(new System.Windows.Forms.Control[]{this.txtIdProduit,this.txtDesignation,this.txtCategorie,this.txtQuantite,this.btnAfficher,this.btnAjouter,this.btnModifier,this.btnRechercher,this.btnSupprimer,this.btnAfficherEpuises,this.btnSupprimerTousEpuises,this.btnSupprimerEpuisesCategorie,this.lblResultat,this.dataGridView1});this.ClientSize=new System.Drawing.Size(800,560);this.MinimumSize=new System.Drawing.Size(800,560);this.Text="Suppression conditionnelle";((System.ComponentModel.ISupportInitialize)this.dataGridView1).EndInit();this.ResumeLayout(false);this.PerformLayout();
- }
-} }
+﻿namespace ClientForm
+{
+    partial class Form1
+    {
+        private System.ComponentModel.IContainer components = null;
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && components != null) components.Dispose();
+            base.Dispose(disposing);
+        }
+        private System.Windows.Forms.TextBox txtIdProduit, txtDesignation, txtCategorie, txtQuantite;
+        private System.Windows.Forms.Button btnAfficher, btnAjouter, btnModifier, btnRechercher, btnSupprimer, btnAfficherEpuises, btnSupprimerTousEpuises, btnSupprimerEpuisesCategorie;
+        private System.Windows.Forms.Label lblResultat;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private void InitializeComponent()
+        {
+            this.txtIdProduit = new System.Windows.Forms.TextBox();
+            this.txtDesignation = new System.Windows.Forms.TextBox();
+            this.txtCategorie = new System.Windows.Forms.TextBox();
+            this.txtQuantite = new System.Windows.Forms.TextBox();
+            this.btnAfficher = new System.Windows.Forms.Button();
+            this.btnAjouter = new System.Windows.Forms.Button();
+            this.btnModifier = new System.Windows.Forms.Button();
+            this.btnRechercher = new System.Windows.Forms.Button();
+            this.btnSupprimer = new System.Windows.Forms.Button();
+            this.btnAfficherEpuises = new System.Windows.Forms.Button();
+            this.btnSupprimerTousEpuises = new System.Windows.Forms.Button();
+            this.btnSupprimerEpuisesCategorie = new System.Windows.Forms.Button();
+            this.lblResultat = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize) this.dataGridView1).BeginInit();
+            this.SuspendLayout();
+            this.txtIdProduit.Location = new System.Drawing.Point(125, 15);
+            this.txtDesignation.Location = new System.Drawing.Point(125, 48);
+            this.txtCategorie.Location = new System.Drawing.Point(125, 81);
+            this.txtQuantite.Location = new System.Drawing.Point(125, 114);
+            this.Controls.Add(new System.Windows.Forms.Label { Text = "ID produit", Location = new System.Drawing.Point(15, 18) });
+            this.Controls.Add(new System.Windows.Forms.Label { Text = "Désignation", Location = new System.Drawing.Point(15, 51) });
+            this.Controls.Add(new System.Windows.Forms.Label { Text = "Catégorie", Location = new System.Drawing.Point(15, 84) });
+            this.Controls.Add(new System.Windows.Forms.Label { Text = "Quantité", Location = new System.Drawing.Point(15, 117) });
+            this.btnAfficher.Text = "Afficher";
+            this.btnAfficher.Location = new System.Drawing.Point(15, 155);
+            this.btnAfficher.Click += this.btnAfficher_Click;
+            this.btnRechercher.Text = "Rechercher";
+            this.btnRechercher.Location = new System.Drawing.Point(145, 155);
+            this.btnRechercher.Click += this.btnRechercher_Click;
+            this.btnAjouter.Text = "Ajouter";
+            this.btnAjouter.Location = new System.Drawing.Point(275, 155);
+            this.btnAjouter.Click += this.btnAjouter_Click;
+            this.btnModifier.Text = "Modifier";
+            this.btnModifier.Location = new System.Drawing.Point(405, 155);
+            this.btnModifier.Click += this.btnModifier_Click;
+            this.btnSupprimer.Text = "Supprimer ID";
+            this.btnSupprimer.Location = new System.Drawing.Point(535, 155);
+            this.btnSupprimer.Click += this.btnSupprimer_Click;
+            this.btnAfficherEpuises.Text = "Afficher épuisés";
+            this.btnAfficherEpuises.Location = new System.Drawing.Point(15, 195);
+            this.btnAfficherEpuises.Click += this.btnAfficherEpuises_Click;
+            this.btnSupprimerTousEpuises.Text = "Supprimer épuisés";
+            this.btnSupprimerTousEpuises.Location = new System.Drawing.Point(165, 195);
+            this.btnSupprimerTousEpuises.Click += this.btnSupprimerTousEpuises_Click;
+            this.btnSupprimerEpuisesCategorie.Text = "Épuisés catégorie";
+            this.btnSupprimerEpuisesCategorie.Location = new System.Drawing.Point(325, 195);
+            this.btnSupprimerEpuisesCategorie.Click += this.btnSupprimerEpuisesCategorie_Click;
+            this.btnAfficher.Size = this.btnRechercher.Size = this.btnAjouter.Size = this.btnModifier.Size = this.btnSupprimer.Size = new System.Drawing.Size(120, 30);
+            this.btnAfficherEpuises.Size = this.btnSupprimerTousEpuises.Size = this.btnSupprimerEpuisesCategorie.Size = new System.Drawing.Size(145, 30);
+            this.lblResultat.Location = new System.Drawing.Point(15, 230);
+            this.lblResultat.Size = new System.Drawing.Size(730, 25);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 260);
+            this.dataGridView1.Size = new System.Drawing.Size(770, 280);
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Controls.AddRange(new System.Windows.Forms.Control[] { this.txtIdProduit, this.txtDesignation, this.txtCategorie, this.txtQuantite, this.btnAfficher, this.btnAjouter, this.btnModifier, this.btnRechercher, this.btnSupprimer, this.btnAfficherEpuises, this.btnSupprimerTousEpuises, this.btnSupprimerEpuisesCategorie, this.lblResultat, this.dataGridView1 });
+            this.ClientSize = new System.Drawing.Size(800, 560);
+            this.MinimumSize = new System.Drawing.Size(800, 560);
+            this.Text = "Suppression conditionnelle";
+            ((System.ComponentModel.ISupportInitialize) this.dataGridView1).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+        }
+    }
+}

@@ -39,3 +39,7 @@ Replace table/column names, parameter types and relevant controls; retain the th
 For an isolated dataset containing only 8, 10, 12 and 18: average 12, min 8, max 18, 3 admitted and 1 ajourné. The supplied seed has eight rows, so its aggregate values differ. For an empty table, average/min/max show N/A and counts are zero.
 
 CRUD uses matricule, nom, prénom and note. `GetStatistiques` returns all five displayed indicators in one row; the individual buttons call separate nullable scalar methods. Decimal input uses the Windows decimal separator.
+
+## Exam reuse
+
+Use `CalculerMoyenne` in `Server/RemoteOperation.cs` for averages; preserve nullable results when no grades exist rather than treating no data as a real zero.

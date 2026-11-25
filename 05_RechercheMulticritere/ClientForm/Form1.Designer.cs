@@ -1,29 +1,94 @@
-namespace ClientForm {
- partial class Form1 { private System.ComponentModel.IContainer components=null; protected override void Dispose(bool disposing) { if(disposing&&components!=null)components.Dispose(); base.Dispose(disposing); }
- private void InitializeComponent() { this.SuspendLayout();
-            this.txtMatricule=new System.Windows.Forms.TextBox(); this.txtMatricule.Name="txtMatricule"; this.txtMatricule.Location=new System.Drawing.Point(15,15); this.txtMatricule.Size=new System.Drawing.Size(130,30);
-            this.txtNom=new System.Windows.Forms.TextBox(); this.txtNom.Name="txtNom"; this.txtNom.Location=new System.Drawing.Point(15,53); this.txtNom.Size=new System.Drawing.Size(130,30);
-            this.txtPrenom=new System.Windows.Forms.TextBox(); this.txtPrenom.Name="txtPrenom"; this.txtPrenom.Location=new System.Drawing.Point(15,91); this.txtPrenom.Size=new System.Drawing.Size(130,30);
-            this.txtGroupe=new System.Windows.Forms.TextBox(); this.txtGroupe.Name="txtGroupe"; this.txtGroupe.Location=new System.Drawing.Point(15,129); this.txtGroupe.Size=new System.Drawing.Size(130,30);
-            this.txtFiltreNom=new System.Windows.Forms.TextBox(); this.txtFiltreNom.Name="txtFiltreNom"; this.txtFiltreNom.Location=new System.Drawing.Point(15,167); this.txtFiltreNom.Size=new System.Drawing.Size(130,30);
-            this.txtFiltrePrenom=new System.Windows.Forms.TextBox(); this.txtFiltrePrenom.Name="txtFiltrePrenom"; this.txtFiltrePrenom.Location=new System.Drawing.Point(15,205); this.txtFiltrePrenom.Size=new System.Drawing.Size(130,30);
-            this.txtFiltreGroupe=new System.Windows.Forms.TextBox(); this.txtFiltreGroupe.Name="txtFiltreGroupe"; this.txtFiltreGroupe.Location=new System.Drawing.Point(15,243); this.txtFiltreGroupe.Size=new System.Drawing.Size(130,30);
-            this.txtMotCle=new System.Windows.Forms.TextBox(); this.txtMotCle.Name="txtMotCle"; this.txtMotCle.Location=new System.Drawing.Point(15,281); this.txtMotCle.Size=new System.Drawing.Size(130,30);
-            this.btnRechercherNomOuPrenom=new System.Windows.Forms.Button(); this.btnRechercherNomOuPrenom.Name="btnRechercherNomOuPrenom"; this.btnRechercherNomOuPrenom.Location=new System.Drawing.Point(15,319); this.btnRechercherNomOuPrenom.Size=new System.Drawing.Size(130,30);
-            this.btnRechercherNomOuPrenom.Text="RechercherNomOuPrenom"; this.btnRechercherNomOuPrenom.Click += new System.EventHandler(this.btnRechercherNomOuPrenom_Click);
-            this.btnReinitialiser=new System.Windows.Forms.Button(); this.btnReinitialiser.Name="btnReinitialiser"; this.btnReinitialiser.Location=new System.Drawing.Point(15,357); this.btnReinitialiser.Size=new System.Drawing.Size(130,30);
-            this.btnReinitialiser.Text="Reinitialiser"; this.btnReinitialiser.Click += new System.EventHandler(this.btnReinitialiser_Click);
-            this.btnAfficher=new System.Windows.Forms.Button(); this.btnAfficher.Name="btnAfficher"; this.btnAfficher.Location=new System.Drawing.Point(15,395); this.btnAfficher.Size=new System.Drawing.Size(130,30);
-            this.btnAfficher.Text="Afficher"; this.btnAfficher.Click += new System.EventHandler(this.btnAfficher_Click);
-            this.btnAjouter=new System.Windows.Forms.Button(); this.btnAjouter.Name="btnAjouter"; this.btnAjouter.Location=new System.Drawing.Point(15,433); this.btnAjouter.Size=new System.Drawing.Size(130,30);
-            this.btnAjouter.Text="Ajouter"; this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
-            this.btnModifier=new System.Windows.Forms.Button(); this.btnModifier.Name="btnModifier"; this.btnModifier.Location=new System.Drawing.Point(15,471); this.btnModifier.Size=new System.Drawing.Size(130,30);
-            this.btnModifier.Text="Modifier"; this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
-            this.btnSupprimer=new System.Windows.Forms.Button(); this.btnSupprimer.Name="btnSupprimer"; this.btnSupprimer.Location=new System.Drawing.Point(15,509); this.btnSupprimer.Size=new System.Drawing.Size(130,30);
-            this.btnSupprimer.Text="Supprimer"; this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
-            this.btnRechercher=new System.Windows.Forms.Button(); this.btnRechercher.Name="btnRechercher"; this.btnRechercher.Location=new System.Drawing.Point(15,547); this.btnRechercher.Size=new System.Drawing.Size(130,30);
-            this.btnRechercher.Text="Rechercher"; this.btnRechercher.Click += new System.EventHandler(this.btnRechercher_Click);
-            this.dataGridView1=new System.Windows.Forms.DataGridView(); this.dataGridView1.Name="dataGridView1"; this.dataGridView1.Location=new System.Drawing.Point(15,585); this.dataGridView1.Size=new System.Drawing.Size(850,300);
+﻿namespace ClientForm
+{
+    partial class Form1
+    {
+        private System.ComponentModel.IContainer components = null;
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && components != null) components.Dispose();
+            base.Dispose(disposing);
+        }
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            this.txtMatricule = new System.Windows.Forms.TextBox();
+            this.txtMatricule.Name = "txtMatricule";
+            this.txtMatricule.Location = new System.Drawing.Point(15, 15);
+            this.txtMatricule.Size = new System.Drawing.Size(130, 30);
+            this.txtNom = new System.Windows.Forms.TextBox();
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Location = new System.Drawing.Point(15, 53);
+            this.txtNom.Size = new System.Drawing.Size(130, 30);
+            this.txtPrenom = new System.Windows.Forms.TextBox();
+            this.txtPrenom.Name = "txtPrenom";
+            this.txtPrenom.Location = new System.Drawing.Point(15, 91);
+            this.txtPrenom.Size = new System.Drawing.Size(130, 30);
+            this.txtGroupe = new System.Windows.Forms.TextBox();
+            this.txtGroupe.Name = "txtGroupe";
+            this.txtGroupe.Location = new System.Drawing.Point(15, 129);
+            this.txtGroupe.Size = new System.Drawing.Size(130, 30);
+            this.txtFiltreNom = new System.Windows.Forms.TextBox();
+            this.txtFiltreNom.Name = "txtFiltreNom";
+            this.txtFiltreNom.Location = new System.Drawing.Point(15, 167);
+            this.txtFiltreNom.Size = new System.Drawing.Size(130, 30);
+            this.txtFiltrePrenom = new System.Windows.Forms.TextBox();
+            this.txtFiltrePrenom.Name = "txtFiltrePrenom";
+            this.txtFiltrePrenom.Location = new System.Drawing.Point(15, 205);
+            this.txtFiltrePrenom.Size = new System.Drawing.Size(130, 30);
+            this.txtFiltreGroupe = new System.Windows.Forms.TextBox();
+            this.txtFiltreGroupe.Name = "txtFiltreGroupe";
+            this.txtFiltreGroupe.Location = new System.Drawing.Point(15, 243);
+            this.txtFiltreGroupe.Size = new System.Drawing.Size(130, 30);
+            this.txtMotCle = new System.Windows.Forms.TextBox();
+            this.txtMotCle.Name = "txtMotCle";
+            this.txtMotCle.Location = new System.Drawing.Point(15, 281);
+            this.txtMotCle.Size = new System.Drawing.Size(130, 30);
+            this.btnRechercherNomOuPrenom = new System.Windows.Forms.Button();
+            this.btnRechercherNomOuPrenom.Name = "btnRechercherNomOuPrenom";
+            this.btnRechercherNomOuPrenom.Location = new System.Drawing.Point(15, 319);
+            this.btnRechercherNomOuPrenom.Size = new System.Drawing.Size(130, 30);
+            this.btnRechercherNomOuPrenom.Text = "RechercherNomOuPrenom";
+            this.btnRechercherNomOuPrenom.Click += new System.EventHandler(this.btnRechercherNomOuPrenom_Click);
+            this.btnReinitialiser = new System.Windows.Forms.Button();
+            this.btnReinitialiser.Name = "btnReinitialiser";
+            this.btnReinitialiser.Location = new System.Drawing.Point(15, 357);
+            this.btnReinitialiser.Size = new System.Drawing.Size(130, 30);
+            this.btnReinitialiser.Text = "Reinitialiser";
+            this.btnReinitialiser.Click += new System.EventHandler(this.btnReinitialiser_Click);
+            this.btnAfficher = new System.Windows.Forms.Button();
+            this.btnAfficher.Name = "btnAfficher";
+            this.btnAfficher.Location = new System.Drawing.Point(15, 395);
+            this.btnAfficher.Size = new System.Drawing.Size(130, 30);
+            this.btnAfficher.Text = "Afficher";
+            this.btnAfficher.Click += new System.EventHandler(this.btnAfficher_Click);
+            this.btnAjouter = new System.Windows.Forms.Button();
+            this.btnAjouter.Name = "btnAjouter";
+            this.btnAjouter.Location = new System.Drawing.Point(15, 433);
+            this.btnAjouter.Size = new System.Drawing.Size(130, 30);
+            this.btnAjouter.Text = "Ajouter";
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
+            this.btnModifier = new System.Windows.Forms.Button();
+            this.btnModifier.Name = "btnModifier";
+            this.btnModifier.Location = new System.Drawing.Point(15, 471);
+            this.btnModifier.Size = new System.Drawing.Size(130, 30);
+            this.btnModifier.Text = "Modifier";
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
+            this.btnSupprimer = new System.Windows.Forms.Button();
+            this.btnSupprimer.Name = "btnSupprimer";
+            this.btnSupprimer.Location = new System.Drawing.Point(15, 509);
+            this.btnSupprimer.Size = new System.Drawing.Size(130, 30);
+            this.btnSupprimer.Text = "Supprimer";
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
+            this.btnRechercher = new System.Windows.Forms.Button();
+            this.btnRechercher.Name = "btnRechercher";
+            this.btnRechercher.Location = new System.Drawing.Point(15, 547);
+            this.btnRechercher.Size = new System.Drawing.Size(130, 30);
+            this.btnRechercher.Text = "Rechercher";
+            this.btnRechercher.Click += new System.EventHandler(this.btnRechercher_Click);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Location = new System.Drawing.Point(15, 585);
+            this.dataGridView1.Size = new System.Drawing.Size(850, 300);
             this.Controls.Add(this.txtMatricule);
             this.Controls.Add(this.txtNom);
             this.Controls.Add(this.txtPrenom);
@@ -40,14 +105,44 @@ namespace ClientForm {
             this.Controls.Add(this.btnSupprimer);
             this.Controls.Add(this.btnRechercher);
             this.Controls.Add(this.dataGridView1);
- this.txtMatricule.Location=new System.Drawing.Point(125,15); this.txtNom.Location=new System.Drawing.Point(125,48); this.txtPrenom.Location=new System.Drawing.Point(125,81); this.txtGroupe.Location=new System.Drawing.Point(125,114);
- this.txtFiltreNom.Location=new System.Drawing.Point(440,15); this.txtFiltrePrenom.Location=new System.Drawing.Point(440,48); this.txtFiltreGroupe.Location=new System.Drawing.Point(440,81); this.txtMotCle.Location=new System.Drawing.Point(440,114);
- this.Controls.Add(new System.Windows.Forms.Label{Text="Matricule",Location=new System.Drawing.Point(15,18),AutoSize=true}); this.Controls.Add(new System.Windows.Forms.Label{Text="Nom",Location=new System.Drawing.Point(15,51),AutoSize=true}); this.Controls.Add(new System.Windows.Forms.Label{Text="Prénom",Location=new System.Drawing.Point(15,84),AutoSize=true}); this.Controls.Add(new System.Windows.Forms.Label{Text="Groupe",Location=new System.Drawing.Point(15,117),AutoSize=true});
- this.Controls.Add(new System.Windows.Forms.Label{Text="Filtre nom",Location=new System.Drawing.Point(315,18),AutoSize=true}); this.Controls.Add(new System.Windows.Forms.Label{Text="Filtre prénom",Location=new System.Drawing.Point(315,51),AutoSize=true}); this.Controls.Add(new System.Windows.Forms.Label{Text="Filtre groupe",Location=new System.Drawing.Point(315,84),AutoSize=true}); this.Controls.Add(new System.Windows.Forms.Label{Text="Mot-clé OU",Location=new System.Drawing.Point(315,117),AutoSize=true});
- this.btnAfficher.Location=new System.Drawing.Point(15,155);this.btnAjouter.Location=new System.Drawing.Point(145,155);this.btnModifier.Location=new System.Drawing.Point(275,155);this.btnSupprimer.Location=new System.Drawing.Point(405,155);this.btnRechercherMatricule=new System.Windows.Forms.Button{Text="Chercher matricule",Location=new System.Drawing.Point(535,155),Size=new System.Drawing.Size(145,30)};this.btnRechercherMatricule.Click+=this.btnRechercherMatricule_Click;this.Controls.Add(this.btnRechercherMatricule);
- this.btnRechercher.Location=new System.Drawing.Point(15,195);this.btnRechercher.Text="Filtres ET";this.btnRechercherNomOuPrenom.Location=new System.Drawing.Point(145,195);this.btnRechercherNomOuPrenom.Text="Nom ou prénom";this.btnReinitialiser.Location=new System.Drawing.Point(275,195);this.btnReinitialiser.Text="Réinitialiser";
- this.dataGridView1.Location=new System.Drawing.Point(15,240);this.dataGridView1.Size=new System.Drawing.Size(850,430);this.dataGridView1.Anchor=System.Windows.Forms.AnchorStyles.Top|System.Windows.Forms.AnchorStyles.Bottom|System.Windows.Forms.AnchorStyles.Left|System.Windows.Forms.AnchorStyles.Right;this.dataGridView1.ReadOnly=true;
- this.ClientSize=new System.Drawing.Size(900,700);this.MinimumSize=new System.Drawing.Size(900,700);this.Text="Recherche multicritère";this.ResumeLayout(false); }
+            this.txtMatricule.Location = new System.Drawing.Point(125, 15);
+            this.txtNom.Location = new System.Drawing.Point(125, 48);
+            this.txtPrenom.Location = new System.Drawing.Point(125, 81);
+            this.txtGroupe.Location = new System.Drawing.Point(125, 114);
+            this.txtFiltreNom.Location = new System.Drawing.Point(440, 15);
+            this.txtFiltrePrenom.Location = new System.Drawing.Point(440, 48);
+            this.txtFiltreGroupe.Location = new System.Drawing.Point(440, 81);
+            this.txtMotCle.Location = new System.Drawing.Point(440, 114);
+            this.Controls.Add(new System.Windows.Forms.Label { Text = "Matricule", Location = new System.Drawing.Point(15, 18), AutoSize = true });
+            this.Controls.Add(new System.Windows.Forms.Label { Text = "Nom", Location = new System.Drawing.Point(15, 51), AutoSize = true });
+            this.Controls.Add(new System.Windows.Forms.Label { Text = "Prénom", Location = new System.Drawing.Point(15, 84), AutoSize = true });
+            this.Controls.Add(new System.Windows.Forms.Label { Text = "Groupe", Location = new System.Drawing.Point(15, 117), AutoSize = true });
+            this.Controls.Add(new System.Windows.Forms.Label { Text = "Filtre nom", Location = new System.Drawing.Point(315, 18), AutoSize = true });
+            this.Controls.Add(new System.Windows.Forms.Label { Text = "Filtre prénom", Location = new System.Drawing.Point(315, 51), AutoSize = true });
+            this.Controls.Add(new System.Windows.Forms.Label { Text = "Filtre groupe", Location = new System.Drawing.Point(315, 84), AutoSize = true });
+            this.Controls.Add(new System.Windows.Forms.Label { Text = "Mot-clé OU", Location = new System.Drawing.Point(315, 117), AutoSize = true });
+            this.btnAfficher.Location = new System.Drawing.Point(15, 155);
+            this.btnAjouter.Location = new System.Drawing.Point(145, 155);
+            this.btnModifier.Location = new System.Drawing.Point(275, 155);
+            this.btnSupprimer.Location = new System.Drawing.Point(405, 155);
+            this.btnRechercherMatricule = new System.Windows.Forms.Button { Text = "Chercher matricule", Location = new System.Drawing.Point(535, 155), Size = new System.Drawing.Size(145, 30) };
+            this.btnRechercherMatricule.Click += this.btnRechercherMatricule_Click;
+            this.Controls.Add(this.btnRechercherMatricule);
+            this.btnRechercher.Location = new System.Drawing.Point(15, 195);
+            this.btnRechercher.Text = "Filtres ET";
+            this.btnRechercherNomOuPrenom.Location = new System.Drawing.Point(145, 195);
+            this.btnRechercherNomOuPrenom.Text = "Nom ou prénom";
+            this.btnReinitialiser.Location = new System.Drawing.Point(275, 195);
+            this.btnReinitialiser.Text = "Réinitialiser";
+            this.dataGridView1.Location = new System.Drawing.Point(15, 240);
+            this.dataGridView1.Size = new System.Drawing.Size(850, 430);
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            this.dataGridView1.ReadOnly = true;
+            this.ClientSize = new System.Drawing.Size(900, 700);
+            this.MinimumSize = new System.Drawing.Size(900, 700);
+            this.Text = "Recherche multicritère";
+            this.ResumeLayout(false);
+        }
         private System.Windows.Forms.Button btnRechercherMatricule;
         private System.Windows.Forms.TextBox txtMatricule;
         private System.Windows.Forms.TextBox txtNom;
@@ -65,4 +160,5 @@ namespace ClientForm {
         private System.Windows.Forms.Button btnSupprimer;
         private System.Windows.Forms.Button btnRechercher;
         private System.Windows.Forms.DataGridView dataGridView1;
- } }
+    }
+}

@@ -17,3 +17,7 @@ Change the schema in `database.sql`, declarations in `Interfaces/IRemoteOperatio
 
 ## Verification
 Test 08:00, 14:30 and 23:59 on day 1 and 00:00 on day 2: a day-1 search returns three; an interval through day 2 includes all four. Test invalid ranges, CRUD, and preservation of hours and minutes.
+
+## Exam reuse
+
+For another date exercise, adapt the interval boundaries to whether the end date includes the entire day or a specific time.

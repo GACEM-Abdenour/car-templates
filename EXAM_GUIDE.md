@@ -1,5 +1,7 @@
 # CAR practical-exam guide
 
+Scenario 21 adapts to étudiants/groupes, inscriptions, enseignants/cours, bibliothèque/emprunts, factures/lignes or commandes/produits by replacing entities, foreign keys and JOIN columns while retaining the relationship and transaction patterns. Scenario 22 shows how to send a custom serializable object, return a list, compare a copied value with a remote proxy, switch Singleton/SingleCall and connect multiple clients.
+
 1. Identify the table, primary key, columns and Oracle types.
 2. List CRUD, filters and statistics.
 3. Find the wording in `PATTERN_INDEX.md`.
@@ -18,3 +20,19 @@ For “calculer le chiffre d'affaires entre deux dates”, combine 09's SUM with
 For “rechercher un employé puis modifier uniquement son salaire”, combine 03's key lookup and 13's `ModifierSalaire`: declare both in `IRemoteOperation.cs`, put the lookup and single-column UPDATE in `RemoteOperation.cs`, and add matricule/salary controls and handlers in `Form1.Designer.cs` and `Form1.cs`. The UPDATE leaves all other fields untouched.
 
 For “afficher une catégorie puis supprimer uniquement les produits sans stock”, combine 07's ComboBox filtering with 14's category DELETE. Add the signatures in `IRemoteOperation.cs`, SQL with `categorie=:categorie AND quantite=0` in `RemoteOperation.cs`, and selection and confirmation controls/handlers in `Form1.Designer.cs` and `Form1.cs`. Keep the stock rule in the DELETE itself.
+
+For “ajouter un étudiant après vérification du matricule et email”, combine CRUD (01–03), ExecuteScalar (08), and 15's checks. Add bool and insert methods in `IRemoteOperation.cs` and `RemoteOperation.cs`, then controls and handlers in `Form1.Designer.cs` and `Form1.cs`. Preliminary checks are advisory; the database unique constraint resolves races.
+
+For “modifier uniquement l'email sans utiliser celui d'un autre étudiant”, combine 13's partial UPDATE and 15's uniqueness check: add signatures to `IRemoteOperation.cs`, use only email in SET and matricule in WHERE in `RemoteOperation.cs`, exclude the current matricule in the duplicate query, and add the control and handler in `Form1.Designer.cs` and `Form1.cs`. Keep the UNIQUE constraint active.
+
+For “cliquer sur un étudiant puis modifier uniquement son prénom”, combine 16's stored selected matricule with 13's partial UPDATE. Add a `(matricule, prenom)` method in `IRemoteOperation.cs`, implement `UPDATE ... SET prenom=:prenom WHERE matricule=:matricule` in `RemoteOperation.cs`, and use the selected key and a button handler in `Form1.cs` with selection controls in `Form1.Designer.cs`.
+
+For “choisir un enseignant et afficher ses cours”, combine 17's SelectedValue and 03's parameterized search. Add a teacher identifier to the Cours table, declare the search in `IRemoteOperation.cs`, implement the filtered query in `RemoteOperation.cs`, and pass the selected key from `Form1.cs` using controls in `Form1.Designer.cs`. Full relational examples are outside this collection.
+
+For “sélectionner un produit puis enregistrer une sortie”, combine 16's stored selection and 18's atomic conditional UPDATE. Add the movement signature in `IRemoteOperation.cs`, enforce stock in `RemoteOperation.cs`, and use the selected identifier and quantity controls in `Form1.cs` and `Form1.Designer.cs`.
+
+For “afficher les candidats admis classés par moyenne décroissante”, combine 19's calculated decision subquery with 11's ordering. Add the method in `IRemoteOperation.cs`, filter both admitted decisions and ORDER BY the calculated grade in `RemoteOperation.cs`, and wire its button and grid in `Form1.cs` and `Form1.Designer.cs`.
+
+For “chiffre d'affaires par catégorie entre deux dates, supérieur à 50 000”, combine 09, 12 and 20. Add a date column to the database and DateTime parameters in `IRemoteOperation.cs`; in `RemoteOperation.cs`, apply WHERE date boundaries, GROUP BY category, then HAVING SUM > 50000. Add date pickers and handlers in `Form1.Designer.cs` and `Form1.cs`.
+
+For “nombre d'admis et ajournés par groupe”, add groupe to the student table, combine 19's classification and 20's GROUP BY with conditional COUNT (08), expose a DataSet in `IRemoteOperation.cs`, implement the query in `RemoteOperation.cs`, and bind its grid using `Form1.cs` and `Form1.Designer.cs`.

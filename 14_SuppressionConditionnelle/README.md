@@ -17,3 +17,7 @@ Declare the conditional methods in `Interfaces/IRemoteOperation.cs`; implement `
 
 ## Verification
 In an isolated schema, cancel a deletion; try ID 10002 with stock 10 (zero rows); delete 10001 (one row); delete exhausted Cosmetique products and verify 10004 remains; delete remaining exhausted items and verify every positive-stock item remains. Reject a blank category.
+
+## Exam reuse
+
+For another conditional deletion, keep the business condition in the DELETE itself and interpret zero affected rows carefully.

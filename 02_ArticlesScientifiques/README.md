@@ -36,3 +36,7 @@ Replace table/column names, parameter types and relevant controls; retain the th
 
 ## Verification
 Use a DOI search and verify that a duplicate DOI is rejected by the UNIQUE constraint.
+
+## Exam reuse
+
+Use `RechercherParDOI` in `Server/RemoteOperation.cs` for DOI lookup; bind text parameters to preserve apostrophes and retain a database uniqueness constraint.

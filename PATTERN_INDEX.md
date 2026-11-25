@@ -1,32 +1,36 @@
 # CAR pattern index
 
-Implemented scenarios are linked; 11–30 remain planned.
+All 22 implemented scenarios are linked below. Scenarios 23–30 are not planned.
 
-| Exam clue | Technical trick | Scenario | File / method |
-|---|---|---|---|
-| Prix unitaire, code-barres | decimal CRUD | [01](01_GestionProduits/README.md) | [RemoteOperation](01_GestionProduits/Server/RemoteOperation.cs): `AjouterProduit` |
-| DOI unique | exact text key | [02](02_ArticlesScientifiques/README.md) | `RechercherParDOI` |
-| Nom, prénom, sans majuscules | equality / UPPER | [03](03_RechercheParNom/README.md) | `RechercherParNom` |
-| Commence/contient/termine par | LIKE | [04](04_RecherchePartielle/README.md) | `RechercherCommencePar`, `RechercherContient`, `RechercherTerminePar` |
-| Plusieurs critères, et, ou | dynamic WHERE | [05](05_RechercheMulticritere/README.md) | `RechercherEtudiants`, `RechercherNomOuPrenom` |
-| Admis, compris entre | numeric/BETWEEN | [06](06_GestionNotes/README.md) | `GetAdmis`, `RechercherNotesEntre` |
-| Liste déroulante | DISTINCT / ComboBox | [07](07_FiltrageComboBox/README.md) | `GetDepartements`, `ChargerDepartements` |
-| Nombre de | COUNT | [08](08_ComptageConditionnel/README.md) | `CompterCours` |
-| Chiffre d'affaires | SUM / NVL | [09](09_GestionVentes/README.md) | `CalculerChiffreAffaires` |
-| Moyenne / meilleure note | AVG / MAX | [10](10_StatistiquesNotes/README.md) | `CalculerMoyenne`, `GetNoteMaximale` |
-
-| Trier, ordre croissant / décroissant | ORDER BY | [11](11_ClassementEtudiants/README.md) | [RemoteOperation](11_ClassementEtudiants/Server/RemoteOperation.cs): `TrierParNom`, `TrierParNoteCroissante`, `TrierParNoteDecroissante` |
-| Les N premiers, meilleurs | ordered ROWNUM | [11](11_ClassementEtudiants/README.md) | [RemoteOperation](11_ClassementEtudiants/Server/RemoteOperation.cs): `GetMeilleursEtudiants` |
-| Rang, classement, ex æquo | RANK | [11](11_ClassementEtudiants/README.md) | [RemoteOperation](11_ClassementEtudiants/Server/RemoteOperation.cs): `GetClassement` |
-
-| Date et heure, insertion / modification | Oracle DATE | [12](12_GestionReservations/README.md) | [RemoteOperation](12_GestionReservations/Server/RemoteOperation.cs): `AjouterReservation`, `ModifierReservation` |
-| Journée, entre deux dates, jusqu'au | DateTime boundaries | [12](12_GestionReservations/README.md) | [RemoteOperation](12_GestionReservations/Server/RemoteOperation.cs): `GetReservationsParDate`, `GetReservationsEntre` |
-| Futures, aujourd'hui | SYSDATE / TRUNC | [12](12_GestionReservations/README.md) | [RemoteOperation](12_GestionReservations/Server/RemoteOperation.cs): `GetReservationsFutures`, `GetReservationsAujourdhui` |
-
-| Modifier uniquement, conserver les autres champs | partial UPDATE | [13](13_ModificationPartielle/README.md) | [RemoteOperation](13_ModificationPartielle/Server/RemoteOperation.cs): `ModifierSalaire`, `ModifierDepartement`, `ModifierTelephone` |
-| Champs sélectionnés, effacer téléphone | dynamic SET / DBNull | [13](13_ModificationPartielle/README.md) | [RemoteOperation](13_ModificationPartielle/Server/RemoteOperation.cs): `ModifierEmployePartiellement`; [Form1](13_ModificationPartielle/ClientForm/Form1.cs): `btnModifierSelection_Click` |
-
-| Supprimer seulement si, produits épuisés | conditional DELETE | [14](14_SuppressionConditionnelle/README.md) | [RemoteOperation](14_SuppressionConditionnelle/Server/RemoteOperation.cs): `GetProduitsEpuises`, `SupprimerProduitSiStockNul` |
-| Supprimer tous, par catégorie, confirmer | bulk DELETE / confirmation | [14](14_SuppressionConditionnelle/README.md) | [RemoteOperation](14_SuppressionConditionnelle/Server/RemoteOperation.cs): `SupprimerProduitsEpuises`, `SupprimerProduitsEpuisesParCategorie`; [Form1](14_SuppressionConditionnelle/ClientForm/Form1.cs): `btnSupprimerTousEpuises_Click` |
-
-Planned: 15 doublons, 16 sélection grille, 17 ComboBox edit, 18 stock, 19 CASE, 20 GROUP BY, 21–30 relations, transactions, auth, serialization, multiclient and réseau.
+| Exam clue | Technical trick | Scenario | File / method | Description / Quand l'utiliser |
+|---|---|---|---|---|
+| Prix unitaire, code-barres | decimal CRUD | [01](01_GestionProduits/README.md) | [RemoteOperation](01_GestionProduits/Server/RemoteOperation.cs): `AjouterProduit` | Use typed CRUD to manage integer quantities, decimal prices and long barcode identifiers. |
+| DOI unique | exact text key | [02](02_ArticlesScientifiques/README.md) | `RechercherParDOI` | Use a unique text key to find an article by DOI and reject duplicates. |
+| Nom, prénom, sans majuscules | equality / UPPER | [03](03_RechercheParNom/README.md) | `RechercherParNom` | Use UPPER with equality when exact names must match regardless of case. |
+| Commence/contient/termine par | LIKE | [04](04_RecherchePartielle/README.md) | `RechercherCommencePar`, `RechercherContient`, `RechercherTerminePar` | Use LIKE with escaped input and placed wildcards for prefix, substring or suffix searches. |
+| Plusieurs critères, et, ou | dynamic WHERE | [05](05_RechercheMulticritere/README.md) | `RechercherEtudiants`, `RechercherNomOuPrenom` | Build parameterized AND filters or an OR search when criteria are optional. |
+| Admis, compris entre | numeric/BETWEEN | [06](06_GestionNotes/README.md) | `GetAdmis`, `RechercherNotesEntre` | Use decimal comparisons and BETWEEN to select grades in a range. |
+| Liste déroulante | DISTINCT / ComboBox | [07](07_FiltrageComboBox/README.md) | `GetDepartements`, `ChargerDepartements` | Load distinct values into a ComboBox when users filter by a selected department. |
+| Nombre de | COUNT | [08](08_ComptageConditionnel/README.md) | `CompterCours` | Use COUNT and ExecuteScalar when the exercise asks for a single number of records. |
+| Chiffre d'affaires | SUM / NVL | [09](09_GestionVentes/README.md) | `CalculerChiffreAffaires` | Use SUM with NVL to calculate revenue and return zero for an empty result. |
+| Moyenne / meilleure note | AVG / MAX | [10](10_StatistiquesNotes/README.md) | `CalculerMoyenne`, `GetNoteMaximale` | Use AVG and MAX to calculate grade statistics, handling null aggregates. |
+| Trier, ordre croissant / décroissant | ORDER BY | [11](11_ClassementEtudiants/README.md) | [RemoteOperation](11_ClassementEtudiants/Server/RemoteOperation.cs): `TrierParNom`, `TrierParNoteCroissante`, `TrierParNoteDecroissante` | Use ORDER BY to sort results by name or grade. |
+| Les N premiers, meilleurs | ordered ROWNUM | [11](11_ClassementEtudiants/README.md) | [RemoteOperation](11_ClassementEtudiants/Server/RemoteOperation.cs): `GetMeilleursEtudiants` | Sort in a subquery before applying ROWNUM when selecting the top N rows. |
+| Rang, classement, ex æquo | RANK | [11](11_ClassementEtudiants/README.md) | [RemoteOperation](11_ClassementEtudiants/Server/RemoteOperation.cs): `GetClassement` | Use RANK to assign equal ranks to tied results with gaps after ties. |
+| Date et heure, insertion / modification | Oracle DATE | [12](12_GestionReservations/README.md) | [RemoteOperation](12_GestionReservations/Server/RemoteOperation.cs): `AjouterReservation`, `ModifierReservation` | Use Oracle DATE and date parameters when a reservation includes a date and time. |
+| Journée, entre deux dates, jusqu'au | DateTime boundaries | [12](12_GestionReservations/README.md) | [RemoteOperation](12_GestionReservations/Server/RemoteOperation.cs): `GetReservationsParDate`, `GetReservationsEntre` | Use inclusive start and exclusive next-day boundaries to search entire calendar days. |
+| Futures, aujourd'hui | SYSDATE / TRUNC | [12](12_GestionReservations/README.md) | [RemoteOperation](12_GestionReservations/Server/RemoteOperation.cs): `GetReservationsFutures`, `GetReservationsAujourdhui` | Use SYSDATE and TRUNC when filtering future or current-day records. |
+| Modifier uniquement, conserver les autres champs | partial UPDATE | [13](13_ModificationPartielle/README.md) | [RemoteOperation](13_ModificationPartielle/Server/RemoteOperation.cs): `ModifierSalaire`, `ModifierDepartement`, `ModifierTelephone` | Use a targeted UPDATE to change one field without overwriting the others. |
+| Champs sélectionnés, effacer téléphone | dynamic SET / DBNull | [13](13_ModificationPartielle/README.md) | [RemoteOperation](13_ModificationPartielle/Server/RemoteOperation.cs): `ModifierEmployePartiellement`; [Form1](13_ModificationPartielle/ClientForm/Form1.cs): `btnModifierSelection_Click` | Build selected SET clauses and bind DBNull when optional fields may be cleared. |
+| Supprimer seulement si, produits épuisés | conditional DELETE | [14](14_SuppressionConditionnelle/README.md) | [RemoteOperation](14_SuppressionConditionnelle/Server/RemoteOperation.cs): `GetProduitsEpuises`, `SupprimerProduitSiStockNul` | Use a conditional DELETE when a record may be removed only if its stock is zero. |
+| Supprimer tous, par catégorie, confirmer | bulk DELETE / confirmation | [14](14_SuppressionConditionnelle/README.md) | [RemoteOperation](14_SuppressionConditionnelle/Server/RemoteOperation.cs): `SupprimerProduitsEpuises`, `SupprimerProduitsEpuisesParCategorie`; [Form1](14_SuppressionConditionnelle/ClientForm/Form1.cs): `btnSupprimerTousEpuises_Click` | Use ExecuteNonQuery and confirmation when deleting multiple qualifying records. |
+| Existe déjà, doublon, adresse unique | COUNT / EXISTS / UNIQUE | [15](15_GestionDoublons/README.md) | [RemoteOperation](15_GestionDoublons/Server/RemoteOperation.cs): `EtudiantExiste`, `EmailExiste`, `EmailUtiliseParAutreEtudiant` | Use existence checks and a UNIQUE constraint when duplicate identifiers or emails are forbidden. |
+| Sélectionner une ligne, remplir les champs, Nouveau | DataGridView / DataRowView | [16](16_SelectionDataGridView/README.md) | [Form1](16_SelectionDataGridView/ClientForm/Form1.cs): `dataGridView1_CellClick`, `Selectionner`, `Nouveau` | Read the selected DataRowView when a grid selection must populate edit fields. |
+| Sélectionner un enseignant, nom affiché et matricule | ComboBox DisplayMember / ValueMember | [17](17_ModificationComboBox/README.md) | [Form1](17_ModificationComboBox/ClientForm/Form1.cs): `ChargerListeEnseignants`, `ChargerEnseignantSelectionne` | Use DisplayMember and SelectedValue when a ComboBox displays names but identifies teachers by matricule. |
+| Entrée, sortie, stock insuffisant, alerte | atomic conditional UPDATE | [18](18_GestionStock/README.md) | [RemoteOperation](18_GestionStock/Server/RemoteOperation.cs): `AjouterEntreeStock`, `EnregistrerSortieStock`, `GetProduitsEnAlerte`, `GetQuantiteStock` | Use an atomic conditional UPDATE when stock exits must never create a negative quantity. |
+| Moyenne pondérée, décision, note éliminatoire | CASE WHEN | [19](19_GestionCandidats/README.md) | [RemoteOperation](19_GestionCandidats/Server/RemoteOperation.cs): `GetCandidatsAvecResultats`, `GetCandidatsParDecision`, `GetAdmis`, `CompterCandidatsParDecision` | Use CASE WHEN to classify candidates by weighted grade and elimination rules. |
+| Pour chaque catégorie, groupes dépassant, moyenne pondérée | GROUP BY / HAVING | [20](20_StatistiquesCategorie/README.md) | [RemoteOperation](20_StatistiquesCategorie/Server/RemoteOperation.cs): `GetStatistiquesParCategorie`, `GetCategoriesParChiffreAffaires`, `GetCategoriesParNombreVentes`, `GetPrixMoyenPondereParCategorie` | Use GROUP BY and HAVING to calculate category statistics and filter aggregated groups. |
+| Clés étrangères, JOIN, maître-détail | relations | [21](21_GestionCommandes/README.md) | [Server](21_GestionCommandes/Server/RemoteOperation.cs): `GetCommandes`, `GetLignesCommande`, `RechercherLigneCommande`; [Client](21_GestionCommandes/ClientForm/Form1.cs): `dataGridView1_CellClick` | Use INNER JOIN for matching records and LEFT JOIN for missing relationships in master-detail exercises. |
+| Rollback, stock, deux bases | transaction / connections | [21](21_GestionCommandes/README.md) | [Server](21_GestionCommandes/Server/RemoteOperation.cs): `AjouterCommande`, `GetProduitsDeuxBases` | Use a transaction and rollback when an order or stock change fails, and separate connections for two databases. |
+| Objet sérialisable, proxy, Singleton, SingleCall | valeur / référence | [22](22_RemotingAvance/README.md) | [Server](22_RemotingAvance/Server/RemoteOperation.cs): `GetEtudiant`, `ModifierCopie`, `IncrementerCompteur`; [Program](22_RemotingAvance/Server/Program.cs) | Use serializable objects and remote proxies when comparing pass-by-value with Singleton and SingleCall activation. |
+| Statique, Interlocked, clients concurrents | shared state | [22](22_RemotingAvance/README.md) | [Server](22_RemotingAvance/Server/RemoteOperation.cs): `IncrementerCompteurGlobal`; [Client](22_RemotingAvance/ClientForm/Form1.cs): `btnTestConcurrent_Click` | Use Interlocked counters when concurrent remote clients update shared state. |

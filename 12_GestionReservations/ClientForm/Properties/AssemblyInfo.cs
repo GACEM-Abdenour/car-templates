@@ -1,1 +1,2 @@
-using System.Reflection; [assembly: AssemblyTitle("06_GestionNotes")]
+using System.Reflection;
+[assembly : AssemblyTitle("06_GestionNotes")]

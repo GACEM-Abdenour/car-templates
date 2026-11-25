@@ -35,3 +35,7 @@ Replace table/column names, parameter types and relevant controls; retain the th
 
 ## Verification
 Search Benali and benali; both return every matching row. An unknown name gives an empty grid.
+
+## Exam reuse
+
+Use `RechercherParNom` in `Server/RemoteOperation.cs` for case-insensitive exact matches; return all matching rows rather than assuming names are unique.

@@ -10,3 +10,4 @@ C:\Users\abdeg\Documents\codeProjects\car-templates\05_RechercheMulticritere\Cli
 C:\Users\abdeg\Documents\codeProjects\car-templates\05_RechercheMulticritere\ClientForm\obj\Debug\ClientForm.csproj.Up2Date
 C:\Users\abdeg\Documents\codeProjects\car-templates\05_RechercheMulticritere\ClientForm\obj\Debug\ClientForm.exe
 C:\Users\abdeg\Documents\codeProjects\car-templates\05_RechercheMulticritere\ClientForm\obj\Debug\ClientForm.pdb
+C:\Users\abdeg\Documents\codeProjects\car-templates\05_RechercheMulticritere\ClientForm\obj\Debug\ClientForm.exe.config

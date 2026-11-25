@@ -9,3 +9,4 @@ C:\Users\abdeg\Documents\codeProjects\car-templates\10_StatistiquesNotes\Server\
 C:\Users\abdeg\Documents\codeProjects\car-templates\10_StatistiquesNotes\Server\obj\Debug\Server.csproj.Up2Date
 C:\Users\abdeg\Documents\codeProjects\car-templates\10_StatistiquesNotes\Server\obj\Debug\Server.exe
 C:\Users\abdeg\Documents\codeProjects\car-templates\10_StatistiquesNotes\Server\obj\Debug\Server.pdb
+C:\Users\abdeg\Documents\codeProjects\car-templates\10_StatistiquesNotes\Server\obj\Debug\Server.exe.config

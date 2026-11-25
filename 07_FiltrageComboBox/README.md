@@ -38,3 +38,7 @@ Replace table/column names, parameter types and relevant controls; retain the th
 Select Informatique, then Tous; add another department and refresh the list.
 
 `ChargerDepartements` fetches distinct values, adds a separate Tous option and suppresses selection events during binding. Add, modify and delete refresh the list; the manual filter and selection-change handler both call `AppliquerFiltre`. Use the matricule field for search and CRUD.
+
+## Exam reuse
+
+Use `GetDepartements` in `Server/RemoteOperation.cs` and `ChargerDepartements` in `ClientForm/Form1.cs` for a filter list; guard rebinding events and refresh choices after edits.

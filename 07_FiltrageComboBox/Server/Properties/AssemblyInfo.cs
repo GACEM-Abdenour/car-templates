@@ -1,1 +1,2 @@
-using System.Reflection; [assembly: AssemblyTitle("07_FiltrageComboBox")]
+using System.Reflection;
+[assembly : AssemblyTitle("07_FiltrageComboBox")]

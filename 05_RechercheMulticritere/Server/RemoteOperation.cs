@@ -2,19 +2,107 @@ using System;
 using System.Data;
 using Oracle.ManagedDataAccess.Client;
 using Interfaces;
-namespace Server {
- public class RemoteOperation : MarshalByRefObject, IRemoteOperation {
-  // MACHINE 2: change these Oracle values for the examination database.
-  private const string oradb = "Data Source=localhost:1522/XEPDB1; User Id=oracle; Password=manager;";
-  public override object InitializeLifetimeService() { return null; }
-  public string TesterConnexion(string nomClient) { Console.WriteLine("Requete: " + nomClient); return "Bonjour " + nomClient + ", le serveur repond !"; }
-  private DataSet Query(string sql, string table, Action<OracleCommand> bind = null) { using (var c=new OracleConnection(oradb)) using(var cmd=new OracleCommand(sql,c)) { cmd.BindByName=true; if(bind!=null) bind(cmd); using(var da=new OracleDataAdapter(cmd)) { var ds=new DataSet(); da.Fill(ds,table); return ds; } } }
-  private int Execute(string sql, Action<OracleCommand> bind) { using(var c=new OracleConnection(oradb)) using(var cmd=new OracleCommand(sql,c)) { c.Open(); cmd.BindByName=true; bind(cmd); return cmd.ExecuteNonQuery(); } }
-  private object Scalar(string sql, Action<OracleCommand> bind=null) { using(var c=new OracleConnection(oradb)) using(var cmd=new OracleCommand(sql,c)) { c.Open(); cmd.BindByName=true; if(bind!=null)bind(cmd); return cmd.ExecuteScalar(); } }
-public DataSet GetEtudiants(){return Query("SELECT matricule,nom,prenom,groupe FROM EtudiantMulticritere ORDER BY matricule","Etudiants");} public DataSet RechercherEtudiant(int matricule){return Query("SELECT matricule,nom,prenom,groupe FROM EtudiantMulticritere WHERE matricule=:matricule","Etudiants",x=>x.Parameters.Add("matricule",OracleDbType.Int32).Value=matricule);} public int AjouterEtudiant(int matricule,string nom,string prenom,string groupe){return Execute("INSERT INTO EtudiantMulticritere(matricule,nom,prenom,groupe) VALUES(:matricule,:nom,:prenom,:groupe)",x=>{x.Parameters.Add("matricule",OracleDbType.Int32).Value=matricule;x.Parameters.Add("nom",OracleDbType.Varchar2).Value=nom;x.Parameters.Add("prenom",OracleDbType.Varchar2).Value=prenom;x.Parameters.Add("groupe",OracleDbType.Varchar2).Value=groupe;});} public int ModifierEtudiant(int matricule,string nom,string prenom,string groupe){return Execute("UPDATE EtudiantMulticritere SET nom=:nom,prenom=:prenom,groupe=:groupe WHERE matricule=:matricule",x=>{x.Parameters.Add("nom",OracleDbType.Varchar2).Value=nom;x.Parameters.Add("prenom",OracleDbType.Varchar2).Value=prenom;x.Parameters.Add("groupe",OracleDbType.Varchar2).Value=groupe;x.Parameters.Add("matricule",OracleDbType.Int32).Value=matricule;});} public int SupprimerEtudiant(int matricule){return Execute("DELETE FROM EtudiantMulticritere WHERE matricule=:matricule",x=>x.Parameters.Add("matricule",OracleDbType.Int32).Value=matricule);}
-  // TRICK 05 A: WHERE 1=1 permits optional AND clauses without special first-condition code.
-  public DataSet RechercherEtudiants(string nom,string prenom,string groupe){string sql="SELECT * FROM EtudiantMulticritere WHERE 1=1"; return Query(sql+(String.IsNullOrWhiteSpace(nom)?"":" AND UPPER(nom) LIKE UPPER(:nom)")+(String.IsNullOrWhiteSpace(prenom)?"":" AND UPPER(prenom) LIKE UPPER(:prenom)")+(String.IsNullOrWhiteSpace(groupe)?"":" AND UPPER(groupe)=UPPER(:groupe)"),"Etudiants",x=>{if(!String.IsNullOrWhiteSpace(nom))x.Parameters.Add("nom",OracleDbType.Varchar2).Value="%"+nom+"%";if(!String.IsNullOrWhiteSpace(prenom))x.Parameters.Add("prenom",OracleDbType.Varchar2).Value="%"+prenom+"%";if(!String.IsNullOrWhiteSpace(groupe))x.Parameters.Add("groupe",OracleDbType.Varchar2).Value=groupe;});}
-  // TRICK 05 B: parentheses protect the OR condition when combined later.
-  public DataSet RechercherNomOuPrenom(string motCle){return Query("SELECT * FROM EtudiantMulticritere WHERE (UPPER(nom) LIKE UPPER(:nom) OR UPPER(prenom) LIKE UPPER(:prenom))","Etudiants",x=>{x.Parameters.Add("nom",OracleDbType.Varchar2).Value="%"+motCle+"%";x.Parameters.Add("prenom",OracleDbType.Varchar2).Value="%"+motCle+"%";});}
- }
+
+namespace Server
+{
+    public class RemoteOperation : MarshalByRefObject, IRemoteOperation
+    {
+        // MACHINE 2: change these Oracle values for the examination database.
+        private const string oradb = "Data Source=localhost:1522/XEPDB1; User Id=oracle; Password=manager;";
+        public override object InitializeLifetimeService()
+        {
+            return null;
+        }
+        public string TesterConnexion(string nomClient)
+        {
+            Console.WriteLine("Requete: " + nomClient);
+            return "Bonjour " + nomClient + ", le serveur repond !";
+        }
+        private DataSet Query(string sql, string table, Action<OracleCommand> bind = null)
+        {
+            using (var c = new OracleConnection(oradb)) using (var cmd = new OracleCommand(sql, c))
+            {
+                cmd.BindByName = true;
+                if (bind != null) bind(cmd);
+                using (var da = new OracleDataAdapter(cmd))
+                {
+                    var ds = new DataSet();
+                    da.Fill(ds, table);
+                    return ds;
+                }
+            }
+        }
+        private int Execute(string sql, Action<OracleCommand> bind)
+        {
+            using (var c = new OracleConnection(oradb)) using (var cmd = new OracleCommand(sql, c))
+            {
+                c.Open();
+                cmd.BindByName = true;
+                bind(cmd);
+                return cmd.ExecuteNonQuery();
+            }
+        }
+        private object Scalar(string sql, Action<OracleCommand> bind = null)
+        {
+            using (var c = new OracleConnection(oradb)) using (var cmd = new OracleCommand(sql, c))
+            {
+                c.Open();
+                cmd.BindByName = true;
+                if (bind != null) bind(cmd);
+                return cmd.ExecuteScalar();
+            }
+        }
+        public DataSet GetEtudiants()
+        {
+            return Query("SELECT matricule,nom,prenom,groupe FROM EtudiantMulticritere ORDER BY matricule", "Etudiants");
+        }
+        public DataSet RechercherEtudiant(int matricule)
+        {
+            return Query("SELECT matricule,nom,prenom,groupe FROM EtudiantMulticritere WHERE matricule=:matricule", "Etudiants", x => x.Parameters.Add("matricule", OracleDbType.Int32).Value = matricule);
+        }
+        public int AjouterEtudiant(int matricule, string nom, string prenom, string groupe)
+        {
+            return Execute("INSERT INTO EtudiantMulticritere(matricule,nom,prenom,groupe) VALUES(:matricule,:nom,:prenom,:groupe)", x =>
+            {
+                x.Parameters.Add("matricule", OracleDbType.Int32).Value = matricule;
+                x.Parameters.Add("nom", OracleDbType.Varchar2).Value = nom;
+                x.Parameters.Add("prenom", OracleDbType.Varchar2).Value = prenom;
+                x.Parameters.Add("groupe", OracleDbType.Varchar2).Value = groupe;
+            });
+        }
+        public int ModifierEtudiant(int matricule, string nom, string prenom, string groupe)
+        {
+            return Execute("UPDATE EtudiantMulticritere SET nom=:nom,prenom=:prenom,groupe=:groupe WHERE matricule=:matricule", x =>
+            {
+                x.Parameters.Add("nom", OracleDbType.Varchar2).Value = nom;
+                x.Parameters.Add("prenom", OracleDbType.Varchar2).Value = prenom;
+                x.Parameters.Add("groupe", OracleDbType.Varchar2).Value = groupe;
+                x.Parameters.Add("matricule", OracleDbType.Int32).Value = matricule;
+            });
+        }
+        public int SupprimerEtudiant(int matricule)
+        {
+            return Execute("DELETE FROM EtudiantMulticritere WHERE matricule=:matricule", x => x.Parameters.Add("matricule", OracleDbType.Int32).Value = matricule);
+        }
+        // TRICK 05 A: WHERE 1=1 permits optional AND clauses without special first-condition code.
+        public DataSet RechercherEtudiants(string nom, string prenom, string groupe)
+        {
+            string sql = "SELECT * FROM EtudiantMulticritere WHERE 1=1";
+            return Query(sql + (String.IsNullOrWhiteSpace(nom) ? "" : " AND UPPER(nom) LIKE UPPER(:nom)") + (String.IsNullOrWhiteSpace(prenom) ? "" : " AND UPPER(prenom) LIKE UPPER(:prenom)") + (String.IsNullOrWhiteSpace(groupe) ? "" : " AND UPPER(groupe)=UPPER(:groupe)"), "Etudiants", x =>
+            {
+                if (!String.IsNullOrWhiteSpace(nom)) x.Parameters.Add("nom", OracleDbType.Varchar2).Value = "%" + nom + "%";
+                if (!String.IsNullOrWhiteSpace(prenom)) x.Parameters.Add("prenom", OracleDbType.Varchar2).Value = "%" + prenom + "%";
+                if (!String.IsNullOrWhiteSpace(groupe)) x.Parameters.Add("groupe", OracleDbType.Varchar2).Value = groupe;
+            });
+        }
+        // TRICK 05 B: parentheses protect the OR condition when combined later.
+        public DataSet RechercherNomOuPrenom(string motCle)
+        {
+            return Query("SELECT * FROM EtudiantMulticritere WHERE (UPPER(nom) LIKE UPPER(:nom) OR UPPER(prenom) LIKE UPPER(:prenom))", "Etudiants", x =>
+            {
+                x.Parameters.Add("nom", OracleDbType.Varchar2).Value = "%" + motCle + "%";
+                x.Parameters.Add("prenom", OracleDbType.Varchar2).Value = "%" + motCle + "%";
+            });
+        }
+    }
 }
